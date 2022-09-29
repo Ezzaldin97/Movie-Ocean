@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+  movie ocean - Log In
+{% endblock %}
+{% block content %}
+    <section id='log-in-form'>
+        <div class='container'>
+          <form class='row text-center shadow' method="POST">
+            {{ form.hidden_tag() }}
+            <h2 class='text-capitalize text-white'>log in</h2>
+            <div class='mb-3'>
+              {{ form.username(type="text", class="form-control", id="user_name", placeholder="Username") }}
+            </div>
+            <div class='mb-3'>
+              {{ form.password(type="password", class="form-control", id="password", placeholder="password") }}
+            </div>
+            <div class='mb-3 text-center'>
+              {{ form.submit(class='btn rounded-pill text-capitalize', id='submit-btn') }}
+            </div>
+          </form>
+          <div class='row text-center mt-2'>
+            <a class='text-capitalize text-secondary to-sign-up' href='{{url_for("sign_up_page")}}'>You do not have an account ?</a>
+          </div>
+        </div>
+    </section>
+{% endblock %}
+  </body>
+</html>

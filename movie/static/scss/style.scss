@@ -1,0 +1,13 @@
+@use "custom" as *;
+
+@use "../scss/pages/home-page" as *;
+@use "../scss/pages/sign-up-form" as *;
+@use "../scss/pages/log-in-form" as *;
+@use "../scss/pages/movies" as *;
+@use "../scss/pages/movie-info" as *;
+@use "../scss/pages/comments" as *;
+@use "../scss/pages/likes" as *;
+
+#messages{
+    margin-top: 6rem;
+}

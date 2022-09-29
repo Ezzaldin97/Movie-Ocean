@@ -1,0 +1,55 @@
+@use "../custom" as *;
+
+
+#log-in-form{
+    form {
+        margin: 12rem auto 0 auto;
+        padding: 1rem;
+        background-color: $primary;
+        width: 30%;
+        border-radius: 0.8rem;
+
+        @media (max-width: 1024px){
+            width: 50%;
+        }
+        @media (max-width: 425px){
+            width: 80%;
+        }
+        @media (max-width: 320px){
+            width: 90%;
+        }
+    }
+    h2{
+        margin-bottom: 2rem;
+    }
+    input{
+        border-radius: 0.8rem;
+        font-family: $main-font;
+    }
+    #submit-btn{
+        background-color: $secondary;
+        padding: 0.3rem 2rem;
+        margin-top: 3rem;
+        color: $white;
+        font-family: $main-font;
+
+        &:hover{
+            background-color: $white;
+            color: $secondary;
+        }
+    }
+    a{
+        text-decoration: none;
+        color: $secondary;
+    }
+    .to-sign-up{
+        font-family: $main-font;
+        font-weight: 400;
+        
+
+        &:hover{
+            font-weight: 700;
+        }
+    }
+    
+}

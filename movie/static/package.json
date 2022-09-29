@@ -1,0 +1,28 @@
+{
+  "name": "resturant_finder",
+  "version": "1.0.0",
+  "description": "Bootstrap v5 / Sass / Flask / SQL project",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass":"sass --watch scss:assets/css"
+  },
+  "keywords": [
+    "Bootstrap",
+    "Bootstrap-v5",
+    "sass",
+    "python",
+    "flask",
+    "sqlite3"
+  ],
+  "author": "Ezzaldin",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.35.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "autoprefixer": "^10.2.6",
+    "bootstrap": "^5.0.2",
+    "postcss-cli": "^8.3.1"
+  }
+}

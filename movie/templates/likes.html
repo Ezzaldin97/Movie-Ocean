@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+  movie ocean - comment
+{% endblock %}
+{% block content %}
+  <section id='like-movie'>
+      <div class='container text-center'>
+          <div class='row'>
+            <h1 class='text-secondary text-capitalize'>hi, {{ current_user.username }}</h1>
+            <h4 class='text-capitalize text-secondary'>Do you like {{ movie.movie_title }} ?</h4>
+            <form class='row' method="POST">
+                {{ form.hidden_tag() }}
+                {{ form.like(class='btn rounded-pill text-capitalize', id='submit-btn') }}
+            </form> 
+          </div>
+      </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block title %}
+  movie ocean - {{movie.movie_title}}
+{% endblock %}
+{% block content %}
+    <section id='movie-info'>
+        <div class='container'>
+            <div class='row text-center'>
+                <h1 class='text-secondary text-capitalize'>{{movie.movie_title}}</h1>
+                <div class='poster mt-4'>
+                  <img class='img-fluid shadow' src='{{movie.poster_link}}' alt='movie-poster'>
+                </div>
+            </div>
+            <div class='row text-center mt-4'>
+              <div class='col-sm-4'></div>
+              <div class='col-sm-4'>
+                <button type='button' class='btn rounded-pill ma-btn'>
+                  <a href='{{url_for("give_like", movie_title=movie.movie_title)}}'>{{ likes|length }} <i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
+                </button>
+                <button type='button' class='btn rounded-pill ma-btn'>
+                  <a href='{{url_for("make_comment", movie_title=movie.movie_title)}}'>{{ comments|length }} <i class="fa fa-comment" aria-hidden="true"></i></a>
+                </button>
+              </div>
+              <div class='col-sm-6'></div>
+            </div>
+            <div class='row text-center mt-4'>
+              <div class='col-sm'>
+                <p class='text-primary'>IMDB Rating: {{movie.imdb_rating}}</p>
+              </div>
+            </div>
+            <div class='row text-center text-capitalize mt-4'>
+              <p class='text-primary'>
+                {{movie.story}}
+              </p>
+              <p class='text-primary'>
+                Actors: {{ movie.actors }}
+              </p>
+              <p class='text-primary'>
+                Director: {{ movie.director }}
+              </p>
+              <p class='text-primary'>
+                Awards: {{ movie.awards }}
+              </p>
+              <p class='text-primary'>
+                Genre: {{ movie.genre }}
+              </p>
+            </div>
+        </div>
+    </section>
+    <section id='movie-comments-part'>
+      <div class='container'>
+        <h1 class='text-white text-center'>Comments</h1>
+        {% for comment in comments %}
+          <div class='row'>
+            <div class="card mt-4 mb-4 comment-card" style="width: 80%;">
+              <div class="card-body">
+                <h5 class="card-title text-primary">{{ user_db.query.filter_by(id= comment.user_id).one().username }}</h5>
+                <p class="card-text text-primary">{{ comment.comment }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+{% endblock %}
+  </body>
+</html>

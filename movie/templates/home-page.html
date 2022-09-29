@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}
+  movie ocean - Home
+{% endblock %}
+{% block content %}
+      <section id='intro-part'>
+          <div class='container'>
+              <div class='row bg-primary text-white'>
+                  <div class='col-lg-6 col-md-6'>
+                      <div class='content'>
+                        <h1 class='text-capitalize'>
+                            welcome to <span>movie ocean</span>
+                        </h1>
+                        <p class='mt-2 text-capitalize'>join our world to discover people's opinions about
+                          different movies and serieses to decide your next movie..
+                        </p>
+                        <button type='button' class='btn rounded-pill text-capitalize get-started-btn'>
+                            <a href='{{url_for("movies_page")}}'>get started</a>
+                        </button>
+                      </div>
+                  </div>
+                  <div class='col-lg-6 col-md-6 text-center'>
+                      <img class='img-fluid' src='../static/assets/images/illustrators/Resting_Monochromatic.png' alt='movie watcher'>
+                  </div>
+              </div>
+          </div>
+      </section> 
+      <footer id='footer' class='shadow'>
+          <div class='container'>
+              <div class='row text-center'>
+                <ul class="">
+                    <li class="">Terms of use</li>
+                    <li class="">Privacy Policy</li>
+                </ul>
+                  <p class='text-white'>Copyright©2021 Movie Ocean</p>
+              </div>
+          </div>
+      </footer>
+{% endblock %}
+  </body>
+</html>

@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% block title %}
+  movie ocean - Movies
+{% endblock %}
+{% block content %}
+    <section id='movie-search'>
+        <div class='container'>
+          <h1 class='text-capitalize text-center'>welcome to <span>movie ocean</span></h1>
+          <form class='row mt-5 text-center' method="POST">
+              {{ form.hidden_tag() }}
+              <p class='text-capitalize'>
+                  add movies
+              </p>
+              <div class='col-md-4'>
+                {{ form.movie_title(type="text", class="form-control", id="movie-title", placeholder="Movie Title") }}
+              </div>
+              <div class='col-md-4'>
+                {{ form.media_type(id='genre-dropdown', class="form-select form-select-sm") }}
+              </div>
+              <div class='col-md-4'>
+                {{ form.submit(class='btn rounded-pill text-capitalize', id='submit-btn') }}  
+              </div>
+          </form>
+        </div>
+    </section>
+    <section id='movies-area'>
+      <div class='container'>
+        <div class='row row-col-auto pt-3 pb-3 text-center'>
+          {% for movie in movies %}
+            <div class='col-sm-2'>
+              <div class='movie-card'>
+                <img class='img-fluid' src={{movie.poster_link}} alt='movie-poster'>
+                <div class='movie-desc text-capitalize text-white'>
+                  <div class='caption'>
+                    <h5><a href='/{{movie.movie_title}}/' class='text-white text-capitalize'>{{movie.movie_title}}</a></h5>
+                    <h6 class='text-white text-capitalize'>added by {{ movie.post_creator }}</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+{% endblock %}
+  </body>
+</html>
+
+
+<!--
+          <div class='col-md'>
+            <div class='movie-card'>
+              <img class='img-fluid' src='https://m.media-amazon.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_SX300.jpg' alt='movie-poster'>
+              <div class='movie-desc text-capitalize text-white'>
+                <div class='caption'>
+                  <h5><a href='#' class='text-white text-capitalize'>djando unchained</a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='col-md'>
+            <div class='movie-card'> 
+              <img class='img-fluid' src='https://m.media-amazon.com/images/M/MV5BOWQ1MDE1NzgtNTQ4OC00ZjliLTllZDAtN2IyOTVmMTc5YjUxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg' alt='movie-poster'>
+              <div class='movie-desc text-capitalize text-white'>
+                <div class='caption'>
+                  <h5><a href='#' class='text-white text-capitalize'>spectre</a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='col-md'>
+            <div class='movie-card'>
+              <img class='img-fluid' src='https://m.media-amazon.com/images/M/MV5BOGUyZDUxZjEtMmIzMC00MzlmLTg4MGItZWJmMzBhZjE0Mjc1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg' alt='movie-poster'>
+              <div class='movie-desc text-capitalize text-white'>
+                <div class='caption'>
+                  <h5><a href='#' class='text-white text-capitalize'>the social network</a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='col-md'>
+            <div class='movie-card'>
+              <img class='img-fluid' src='https://m.media-amazon.com/images/M/MV5BOWRiZDIxZjktMTA1NC00MDQ2LWEzMjUtMTliZmY3NjQ3ODJiXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg' alt='movie-poster'>
+              <div class='movie-desc text-capitalize text-white'>
+                <div class='caption'>
+                  <h5><a href='#' class='text-white text-capitalize'>the pianist</a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='col-md'>
+            <div class='movie-card'>
+              <img class='img-fluid' src='https://m.media-amazon.com/images/M/MV5BNTE1OWI1YzgtZjEyMy00MjQ4LWE0NWMtYTNhYjc0ZDQ3ZGRkXkEyXkFqcGdeQXVyNDQ2MTMzODA@._V1_SX300.jpg' alt='movie-poster'>
+              <div class='movie-desc text-capitalize text-white'>
+                <div class='caption'>
+                  <h5><a href='#' class='text-white text-capitalize'>the book of eli</a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='col-md'>
+            <div class='movie-card'>
+              <img class='img-fluid' src='https://m.media-amazon.com/images/M/MV5BMjE1OTU5MjU0N15BMl5BanBnXkFtZTcwMzI3OTU5Ng@@._V1_SX300.jpg' alt='movie-poster'>
+              <div class='movie-desc text-capitalize text-white'>
+                <div class='caption'>
+                  <h5><a href='#' class='text-white text-capitalize'>the vow</a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+-->

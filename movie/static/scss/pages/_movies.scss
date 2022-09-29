@@ -1,0 +1,98 @@
+@use "../custom" as *;
+
+
+#movie-search{
+    margin-top: 8rem;
+
+    h1{
+        color: $primary;
+        font-family: $main-font;
+        font-weight: 700;
+
+        span{
+            color: $secondary;
+        }
+    }
+
+    form{
+
+        p{
+            color: $primary;
+            font-family: $main-font;
+            font-weight: 400; 
+        }
+        #movie-title{
+            border-radius: 0.8rem;
+            border: 0.1rem solid $primary;
+            font-family: $main-font;
+
+            &:focus{
+                border: 0.1rem solid $secondary;
+            }
+
+        }
+
+        #genre-dropdown{
+            border-radius: 0.8rem;
+            border: 0.1rem solid $primary;
+            font-family: $main-font;
+            padding: 0.3rem 2rem;
+
+            &:focus{
+                border: 0.1rem solid $secondary;
+            }
+        }
+
+        #submit-btn{
+            background-color: $secondary;
+            padding: 0.3rem 2rem;
+            color: $white;
+            font-family: $main-font;
+
+            &:hover{
+                background-color: $white;
+                color: $secondary;
+                border-color: $secondary;
+            }
+        }
+    }
+}
+
+#movies-area{
+    background-color: $primary;
+    margin-top: 2rem;
+
+    .movie-card{
+        position: relative;
+
+        .movie-desc{
+            background-color: rgba($secondary, 0.6);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            visibility: hidden;
+
+            .caption{
+                color: $white;
+                text-align: center;
+
+                a{
+                    font-family: $main-font;
+                    font-weight: 300;
+                    text-decoration: none;
+
+                    &:hover{
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        &:hover{
+            .movie-desc{
+                visibility: visible;    
+            }    
+        }
+    }
+}

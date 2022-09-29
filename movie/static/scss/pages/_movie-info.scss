@@ -1,0 +1,49 @@
+@use "../custom" as *;
+
+
+#movie-info{
+    margin-top: 8rem;
+    font-family: $main-font;
+    
+    h1{
+        font-weight: 700;
+    }
+
+    .ma-btn{
+        background-color: $secondary;
+        padding: 0.3rem 2rem;
+        font-family: $main-font;
+        color: $white;
+
+        a{
+            font-family: $main-font;
+            text-decoration: none;
+            color: $white;
+        }
+
+        &:hover{
+            background-color: $white;
+            border-color: $secondary;
+            color: $secondary;
+
+            a{
+                color: $secondary;
+            }
+        }
+    }
+    
+    select{
+        width: 4rem;
+    }
+}
+
+#movie-comments-part{
+    margin-top: 2rem; 
+    background-color: $primary;
+
+    .comment-card{
+        font-family: $main-font;
+        border-radius: 0.8rem;
+        border-color: $secondary; 
+    }
+}
